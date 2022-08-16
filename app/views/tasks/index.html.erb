@@ -1,0 +1,15 @@
+<div id="cont">
+<div >
+  <ul class="list mt-3 ">
+    <% @tasks.each do |task| %>
+    <li>
+      <%= link_to task.title, task_path(task), class:"btn btn-outline-info mb-2 me-2" %>
+      <%= link_to task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        <i class="fa-solid fa-trash-can bg-success text-white"></i>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+  <%= link_to "Liens vers create", new_task_path, class:"btn btn-danger"%>
+</div>
+</div>
